@@ -17,8 +17,22 @@ Level::~Level()
 // handle user input
 void Level::handleInput()
 {
-
-
+	//if space is pressed output to console
+	if (input->isKeyDown(sf::Keyboard::Space))
+	{
+		input->setKeyUp(sf::Keyboard::Space);
+		std::cout << "Spacebar was pressed" << std::endl << std::endl;
+	}
+	if (input->isKeyDown(sf::Keyboard::Enter))
+	{
+		input->setKeyUp(sf::Keyboard::Enter);
+		std::cout << "Enter was pressed" << std::endl << std::endl;
+	}
+	if (input->isKeyDown(sf::Keyboard::Escape))
+	{
+		input->setKeyUp(sf::Keyboard::Escape);
+		window->close();
+	}
 }
 
 // Update game objects
